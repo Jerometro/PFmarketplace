@@ -4,4 +4,20 @@ class LaptopsController < ApplicationController
   def show
     @laptop = Laptop.find(params[:id])
   end
+
+  def new
+    @laptop = Laptop.new
+  end
+
+  def create
+    @laptop = Laptop.new(laptop_params)
+    @laptop.user = current_user
+    @laptop.save ? (redirect_to laptop_path(@laptop)) : (render :new)
+  end
+
+  private
+
+  def laptop_params
+    params.require(:laptop).permit(:address, :price_per_day, :name, :description)
+  end
 end
