@@ -27,6 +27,9 @@
         </li>
       <% else %>
         <li class="nav-item">
+          <%= link_to "Add a laptop", laptops_path, class:"btn btn-primary" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
