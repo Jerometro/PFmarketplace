@@ -1,0 +1,11 @@
+<h1> <%= @laptop.name %> </h1>
+
+<h2>Description :</h2>
+<p> <%= @laptop.description %> </p>
+<p> <%= @laptop.address %> </p>
+<p> Belongs to: <%= @laptop.user.first_name %> <%= @laptop.user.last_name %> </p>
+
+<div class="laptop-price">
+<h2>Price :</h2>
+<p> <%= @laptop.price_per_day %> </p>
+</div>
