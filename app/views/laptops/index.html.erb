@@ -1,0 +1,14 @@
+<h1>All available laptops</h1>
+
+<% @laptops.each do |laptop| %>
+  <h2> <%= link_to laptop.name %> </h2>
+<% end %>
+
+<ul>
+  <% @laptops.each do |laptop| %>
+    <li>Description: <%= link_to laptop.description %></li>
+    <li>Price per day: <%= link_to laptop.price_per_day %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a laptop", laptops_path, class:"btn btn-primary" %>
