@@ -8,10 +8,10 @@
 
 <div class="container">
 <% @laptops.each do |laptop| %>
-  <h2> <%= link_to laptop.name %> </h2>
+  <h2> <%= link_to laptop.name, laptop_path(laptop) %> </h2>
     <ul>
-      <li>Description: <%= link_to laptop.description %></li>
-      <li>Price: <%= link_to laptop.price_per_day %> euros per day</li>
+      <li>Description: <%= laptop.description %></li>
+      <li>Price: <%= laptop.price_per_day %> euros per day</li>
     </ul>
     </div>
   <% end %>

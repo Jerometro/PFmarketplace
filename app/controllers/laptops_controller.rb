@@ -7,6 +7,7 @@ class LaptopsController < ApplicationController
   end
 
   def show
+    @laptop = Laptop.find(params[:id])
   end
 
   def new
