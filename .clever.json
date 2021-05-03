@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_eb8a6698-de72-4771-a2ef-9f8171627f4a",
+      "org_id": "user_d7573f5f-10f2-4b0a-a615-d3701415a399",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_eb8a6698-de72-4771-a2ef-9f8171627f4a.git",
+      "name": "Rent-a-Laptop",
+      "alias": "Rent-a-Laptop"
+    }
+  ]
+}

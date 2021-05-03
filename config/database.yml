@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: Rent_a_Laptop_production
-  username: Rent_a_Laptop
-  password: <%= ENV['RENT_A_LAPTOP_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
