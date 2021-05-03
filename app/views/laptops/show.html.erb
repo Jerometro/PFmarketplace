@@ -9,3 +9,6 @@
 <h2>Price :</h2>
 <p> <%= @laptop.price_per_day %> </p>
 </div>
+
+<%= link_to "Delete", laptops_path(@laptop), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+
