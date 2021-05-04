@@ -1,0 +1,16 @@
+<h2>My Laptops( <%= @laptops.count %> )</h2>
+<div class="laptops">
+  <% @laptops.each do |l| %>
+    <div class="laptop">
+      <h3><%= l.name %></h3>
+      <p> <%= l.description %> </p>
+      <div class="price">
+        <p><%= l.price_per_day %></p>
+      </div>
+      <div class="config">
+        <%= link_to "Edit", edit_laptop_path(l), class: "btn btn-outline-warning" %>
+        <%= link_to "Delete", laptop_path(l), method: :delete, data: { confirm: " Are you sure ? "}, class: "btn btn-outline-danger" %>
+      </div>
+    </div>
+  <% end %>
+</div>
