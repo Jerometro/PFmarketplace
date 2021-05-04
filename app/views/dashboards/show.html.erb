@@ -14,3 +14,18 @@
     </div>
   <% end %>
 </div>
+
+<h2>My Bookings</h2>
+<div class="bookings">
+  <% @bookings.each do |b| %>
+    <div class="booking">
+      <h3><%= b.laptop.name %>( <%= b.status %> )</h3>
+      <p> Booked from <%= b.start_date %> to <%= b.end_date %></p>
+      <div class="price">
+        <h3>Total price :</h3>
+        <p><%= b.price %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
