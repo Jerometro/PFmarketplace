@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+if Rails.env.development?
+  Booking.destroy_all
+  Laptop.destroy_all
+  User.destroy_all
+end
+
 bertrand = User.create!({
   first_name: 'Bertrand',
   last_name: 'Cantat',
@@ -19,12 +25,35 @@ serge = User.create!({
   password: '12345678'
 })
 
+paul = User.create!({
+  first_name: 'Paul',
+  last_name: 'Hamster',
+  email: 'paul@hamster.com',
+  password: '12345678'
+})
+
 mac_de_serge = Laptop.create!({
   name: 'Macbook Pro',
   description: 'Very good machine. Grey and shit',
   address: '17 avenue de la République 35000 Rennes',
   price_per_day: 150,
   user: serge
+})
+
+lenovo_de_paul = Laptop.create!({
+  name: 'Lenovo',
+  description: 'Black color, a bit used',
+  address: '30 avenue Charles de Gaulle 35000 Rennes',
+  price_per_day: 50,
+  user: paul
+})
+
+mac_de_paul = Laptop.create!({
+  name: 'MacBook Air',
+  description: 'Spacegrey, brand new',
+  address: '24 rue du Bois 35000 Rennes',
+  price_per_day: 100,
+  user: paul
 })
 
 booking = Booking.create!({
