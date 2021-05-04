@@ -20,8 +20,12 @@
       </div>
     </div>
   </div>
-  <div id="book-laptop">
-    <h2>Book this laptop !</h2>
-    <%= render "bookings/new" %>
-  </div>
+    <% if (@laptop.user != current_user) %>
+      <div id="book-laptop">
+        <h2>Book this laptop !</h2>
+        <%= render "bookings/new" %>
+      </div>
+    <% else %>
+      <%= link_to "Back to laptops", laptops_path(@laptop), class: "btn-show btn btn-warning" %>
+    <% end %>
 </div>
