@@ -21,6 +21,16 @@ class BookingsController < ApplicationController
     render :new
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = false
+  end
+
+  def deny
+    @booking = Booking.find(params[:id])
+    @booking.status = true
+  end
+
   private
 
   def set_laptop
