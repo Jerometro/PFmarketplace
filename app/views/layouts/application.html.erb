@@ -11,9 +11,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
-    <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
-    <%= yield %>
+  <body class="body">
+    <header>
+      <%= render 'shared/flashes' %>
+      <%= render 'shared/navbar' %>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <%= render 'shared/footer' %>
+    </footer>
   </body>
 </html>

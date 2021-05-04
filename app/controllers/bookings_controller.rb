@@ -21,14 +21,25 @@ class BookingsController < ApplicationController
     render :new
   end
 
+  def cancel
+    @booking = Booking.find(params[:id])
+    @booking.status = "cancelled"
+    @booking.save
+    redirect_to dashboard_path
+  end
+
   def accept
     @booking = Booking.find(params[:id])
-    @booking.status = false
+    @booking.status = "accepted"
+    @booking.save
+    redirect_to dashboard_path
   end
 
   def deny
     @booking = Booking.find(params[:id])
-    @booking.status = true
+    @booking.status = "denied"
+    @booking.save
+    redirect_to dashboard_path
   end
 
   private
