@@ -1,11 +1,18 @@
-<h2>My Laptops( <%= @laptops.count %> )</h2>
+<div class="container mt-3">
+
+  <div class="row">
+    <div class="col-12">
+      <h2>My Laptops( <%= @laptops.count %> )</h2>
+    </div>
+  </div>
+
 <div class="laptops">
   <% @laptops.each do |l| %>
-    <div class="laptop">
-      <h3><%= l.name %></h3>
+    <div class="laptop-card">
+      <h4><%= l.name %></h4>
       <p> <%= l.description %> </p>
       <div class="price">
-        <p><%= l.price_per_day %></p>
+        <p><%= l.price_per_day%> €/day</p>
       </div>
       <div class="config">
         <%= link_to "Edit", edit_laptop_path(l), class: "btn btn-outline-warning" %>
@@ -15,27 +22,39 @@
   <% end %>
 </div>
 
-<h2>My Bookings(<%= @bookings.count %>) </h2>
-<div class="bookings">
-  <% @bookings.each do |b| %>
-    <div class="booking">
-      <h3><%= b.laptop.name %>( <%= b.status %> )</h3>
-      <p> Booked from <%= b.start_date %> to <%= b.end_date %></p>
-      <div class="price">
-        <h3>Total price :</h3>
-        <p><%= b.price %></p>
+<div class="container-bookings">
+  <div class="row">
+    <div class="col-6">
+      <h2>My Bookings(<%= @bookings.count %>)</h2>
+      <div class="bookings">
+        <% @bookings.each do |b| %>
+          <div class="booking-card">
+            <h4><%= b.laptop.name %> ( <%= b.status %> )</h4>
+            <p> Booked from <%= b.start_date.strftime("%d/%m/%y") %> to <%= b.end_date.strftime("%d/%m/%y") %></p>
+            <div class="price">
+              <p>Total price: </p>
+              <p> <%= b.price %>€</p>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-  <% end %>
-</div>
 
-<h2>My booked Laptops(<%= @booked.count %>)</h2>
-<div class="bookings">
-  <% @booked.each do |b| %>
-  <h3><%= b.laptop.name %></h3>
-  <p>Booked by <%= b.user.first_name %> from <%= b.start_date %> to <%= b.end_date %></p>
-  <h4>Total Price:</h4>
-  <p><%= b.price %></p>
-  <% end %>
+    <div class="col-6">
+      <h2>My Booked Laptops(<%= @booked.count %>)</h2>
+      <div class="rentals">
+        <% @booked.each do |b| %>
+          <div class="booked-card">
+            <h4><%= b.laptop.name %></h3>
+            <p>Booked by <%= b.user.first_name %> from <%= b.start_date.strftime("%d/%m/%y") %> to <%= b.end_date.strftime("%d/%m/%y") %></p>
+            <div class="price">
+              <p>Total Price: </p>
+              <p> <%= b.price %>€</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
