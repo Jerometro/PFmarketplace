@@ -15,7 +15,7 @@
   <% end %>
 </div>
 
-<h2>My Bookings</h2>
+<h2>My Bookings(<%= @bookings.count %>) </h2>
 <div class="bookings">
   <% @bookings.each do |b| %>
     <div class="booking">
@@ -26,6 +26,14 @@
         <p><%= b.price %></p>
       </div>
     </div>
+  <% end %>
+</div>
+
+<h2>My booked Laptops(<%= @booked.count %>)</h2>
+<div class="bookings">
+  <% @booked.each do |b| %>
+  <h3><%= b.laptop.name %></h3>
+  <p>Booked by <%= b.user.first_name %> from <%= b.start_date %> to <%= b.end_date %></p>
   <% end %>
 </div>
 
