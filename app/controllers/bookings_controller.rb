@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.price = @laptop.price_per_day * days
     @booking.user = current_user
 
-    redirect_to laptop_path(@laptop) and return if @booking.save
+    redirect_to dashboard_path and return if @booking.save
 
     render :new
   end

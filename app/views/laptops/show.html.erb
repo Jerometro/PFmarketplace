@@ -1,16 +1,27 @@
-<h1> <%= @laptop.name %> </h1>
-
-<h2>Description :</h2>
-<p> <%= @laptop.description %> </p>
-<p> <%= @laptop.address %> </p>
-<p> Belongs to: <%= @laptop.user.first_name %> <%= @laptop.user.last_name %> </p>
-
-<p class="laptop-price"> Price per day: <%= @laptop.price_per_day %>€</p>
-
-
-
-
-<%= link_to "Book the laptop", new_laptop_booking_path(@laptop), class: "btn btn-success" %>
-<%= link_to "Back to laptops list", laptops_path, class: "btn btn-primary" %>
-<%= link_to "Edit", edit_laptop_path(@laptop), class: "btn btn-warning" %>
-<%= link_to "Delete", laptop_path(@laptop), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/5076531/pexels-photo-5076531.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940;">
+</div>
+<div id="full-laptop-show">
+  <div id="full-card">
+    <div class="laptop-details">
+      <h1><%= @laptop.name %></h1>
+      <p><%= @laptop.address %></p>
+    </div>
+    <div class="laptop-details">
+      <h3>Description</h3>
+      <p> <%= @laptop.description %> </p>
+    </div>
+    <div class="laptop-details">
+      <h2>Price</h2>
+        <div class="laptop-infos">
+          <div class="price">
+            <i class="fas fa-euro-sign"></i>
+            <p><%= @laptop.price_per_day %> / day</p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div id="book-laptop">
+    <h2>Book this laptop !</h2>
+    <%= render "bookings/new" %>
+  </div>
+</div>

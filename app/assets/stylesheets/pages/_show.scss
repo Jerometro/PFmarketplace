@@ -1,0 +1,65 @@
+.laptop-infos {
+  display: flex;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.price p {
+  padding-left: 5px;
+  margin: 0px;
+}
+
+
+.laptop-config {
+  margin-top: 16px;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+  position: relative;
+}
+
+.laptop-details {
+  border-radius: 16px;
+  margin-bottom: 5px;
+  padding: 30px;
+  box-shadow: 0px 2px 10px -5px;
+  background-color: rgb(240, 240, 240);
+  width: 100vh;
+}
+
+.laptop > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  padding-bottom: 5px;
+}
+
+#full-card {
+  position: absolute;
+  bottom: 1px;
+  left: 20px;
+  margin-left: 100px;
+}
+
+#full-laptop-show {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+#book-laptop {
+  position: absolute;
+  bottom: 50px;
+  margin-right: 100px;
+  border-radius: 16px;
+  margin-bottom: 5px;
+  padding: 30px;
+  box-shadow: 0px 2px 10px -5px;
+  background-color: rgb(240, 240, 240);
+}
