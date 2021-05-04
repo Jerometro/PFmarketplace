@@ -34,6 +34,8 @@
   <% @booked.each do |b| %>
   <h3><%= b.laptop.name %></h3>
   <p>Booked by <%= b.user.first_name %> from <%= b.start_date %> to <%= b.end_date %></p>
+  <h4>Total Price:</h4>
+  <p><%= b.price %></p>
   <% end %>
 </div>
 
