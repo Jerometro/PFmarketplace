@@ -17,12 +17,12 @@ class LaptopsController < ApplicationController
   def create
     @laptop = Laptop.new(laptop_params)
     @laptop.user = current_user
-    @laptop.save ? (redirect_to laptop_path(@laptop)) : (render :new)
+    @laptop.save ? (redirect_to dashboard_path) : (render :new)
   end
 
   def destroy
     @laptop.destroy
-    redirect_to laptops_path
+    redirect_to dashboard_path
   end
 
   def edit
@@ -30,7 +30,7 @@ class LaptopsController < ApplicationController
 
   def update
     if @laptop.update(laptop_params)
-      redirect_to laptop_path(@laptop)
+      redirect_to dashboard_path
     else
       render :edit
     end
