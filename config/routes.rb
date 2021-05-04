@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [] do
     member { patch :accept }
     member { patch :deny }
+    member { patch :cancel }
   end
 
   resource :dashboard, only: [:show]
