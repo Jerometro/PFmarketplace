@@ -1,6 +1,6 @@
 class LaptopsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_laptop, only: [:destroy, :show]
+  before_action :set_laptop, only: [:destroy, :show, :edit, :update]
 
   def index
     @laptops = Laptop.all
@@ -22,6 +22,17 @@ class LaptopsController < ApplicationController
   def destroy
     @laptop.destroy
     redirect_to laptops_path
+  end
+
+  def edit
+  end
+
+  def update
+    if @laptop.update(laptop_params)
+      redirect_to laptop_path(@laptop)
+    else
+      render :edit
+    end
   end
 
   private
