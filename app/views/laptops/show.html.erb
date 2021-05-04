@@ -5,6 +5,7 @@
     <div class="laptop-details">
       <h1><%= @laptop.name %></h1>
       <p><%= @laptop.address %></p>
+      <p> Owned by <%= @laptop.user.first_name.capitalize %> </p>
     </div>
     <div class="laptop-details">
       <h3>Description</h3>
@@ -14,8 +15,7 @@
       <h2>Price</h2>
         <div class="laptop-infos">
           <div class="price">
-            <i class="fas fa-euro-sign"></i>
-            <p><%= @laptop.price_per_day %> / day</p>
+            <p><%= @laptop.price_per_day %> €/day</p>
           </div>
       </div>
     </div>
