@@ -1,20 +1,14 @@
 <head>
 </head>
 
-<div class="container">
-  <h1>All available laptops</h1>
-</div>
+<h1>All available laptops</h1>
 
-
-<div class="container">
+<div class="laptop-index">
 <% @laptops.each do |laptop| %>
-  <h2> <%= link_to laptop.name %> </h2>
+  <h2> <%= link_to laptop.name, laptop_path(laptop) %> </h2>
     <ul>
-      <li>Description: <%= link_to laptop.description %></li>
-      <li>Price: <%= link_to laptop.price_per_day %> euros per day</li>
+      <li>Description: <%= laptop.description %></li>
+      <li>Price: <%= laptop.price_per_day %> euros per day</li>
     </ul>
     </div>
   <% end %>
-</div>
-</div>
-

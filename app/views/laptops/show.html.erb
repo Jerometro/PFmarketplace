@@ -5,11 +5,12 @@
 <p> <%= @laptop.address %> </p>
 <p> Belongs to: <%= @laptop.user.first_name %> <%= @laptop.user.last_name %> </p>
 
-<div class="laptop-price">
-<h2>Price :</h2>
-<p> <%= @laptop.price_per_day %> </p>
-</div>
+<p class="laptop-price"> Price per day: <%= @laptop.price_per_day %>€</p>
 
-<%= link_to "Delete", laptops_path(@laptop), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+
+
+
+<%= link_to "Book the laptop", new_laptop_booking_path(@laptop), class: "btn btn-success" %>
+<%= link_to "Back to laptops list", laptops_path, class: "btn btn-primary" %>
 <%= link_to "Edit", edit_laptop_path(@laptop), class: "btn btn-warning" %>
-
+<%= link_to "Delete", laptop_path(@laptop), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
