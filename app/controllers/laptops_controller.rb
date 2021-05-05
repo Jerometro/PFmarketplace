@@ -4,6 +4,16 @@ class LaptopsController < ApplicationController
 
   def index
     @laptops = Laptop.all
+
+    # the `geocoded` scope filters only laptops with coordinates (latitude & longitude)
+    @markers = @laptops.geocoded.map do |laptop|
+      {
+        lat: laptop.latitude,
+        lng: laptop.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { laptop: laptop }),
+        image_url: helpers.asset_url('map-marker.png')
+      }
+    end
   end
 
   def show
