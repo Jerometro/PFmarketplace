@@ -7,7 +7,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
-      <h1>All available laptops(<%= @laptops.count %>)</h1>
+      <h1>Laptops available(<%= @laptops.count %>)</h1>
     </div>
   </div>
 
@@ -16,25 +16,13 @@
   <% @laptops.each do |laptop| %>
     <div class="col-4">
       <div class="laptop-card">
-        <h4> <%= link_to laptop.name, laptop_path(laptop) %> </h4>
+        <img src="<%= cl_image_path(laptop.photo.key) %>" alt="">
+        <div>
+          <h4> <%= link_to laptop.name, laptop_path(laptop) %> </h4>
           <p><strong>Description:</strong> <%= laptop.description %></p>
-        <div class="flex">
-          <div class="flex ml-3">
           <p><%= laptop.price_per_day %> €/day </p>
-          </div>
         </div>
-<!--           <div class="laptop-card-actions">
-            <%= link_to 'More info', laptop_path(laptop) %>
-            <%= link_to 'Edit', edit_laptop_path(laptop), class: 'ml-3 text-warning' %>
-            <%= link_to "Delete", laptop_path(laptop),
-                method: :delete,
-                data: { confirm: "Are you sure?" },
-                class: 'ml-3 text-danger'
-            %>
-            </div> -->
       </div>
-
-
     </div>
   <% end %>
 </div>
