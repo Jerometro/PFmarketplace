@@ -35,7 +35,11 @@
               <p>Total price: </p>
               <p> <%= b.price %>€</p>
             </div>
-            <%= link_to "Cancel", cancel_booking_path(b), method: :patch, class: "btn btn-outline-warning" %>
+            <% if b.status != "cancelled" %>
+            <div class="cancel">
+              <%= link_to "Cancel", cancel_booking_path(b), method: :patch, class: "btn btn-outline-warning" %>
+            </div>
+            <% end %>
           </div>
         <% end %>
       </div>
