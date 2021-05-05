@@ -24,6 +24,9 @@
       <div id="book-laptop">
         <h2>Book this laptop !</h2>
         <%= render "bookings/new" %>
+        <br>
+        <p>Total Price :</p>
+        <p id="total-price" >0€</p>
       </div>
     <% else %>
       <%= link_to "Back to laptops", laptops_path(@laptop), class: "btn-show btn btn-warning" %>
