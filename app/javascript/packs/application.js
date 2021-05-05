@@ -29,9 +29,11 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { showTotalPrice } from '../components/price'
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  showTotalPrice();
 })
 
 // Internal imports, e.g:
