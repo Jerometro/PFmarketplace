@@ -22,13 +22,13 @@
           <p><%= laptop.price_per_day %> €/day </p>
         </div>
       </div>
-    </div>
-
-    <div id="map"
+    </div >
+<% end %>
+  <div id="map"
          style="width: 100%; height: 600px;"
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
   </div>
+</div>
 
 </body>
