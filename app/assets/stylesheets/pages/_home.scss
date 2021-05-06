@@ -1,15 +1,15 @@
 // Specific CSS for your home-page
 .homebanner {
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/5054213/pexels-photo-5054213.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  height: 80vh;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding-top: 250px;
 }
 
 .homebanner h1 {
   margin: 0;
-  color: white;
+  color: #F4F4F4;
   text-shadow: 3px 3px 3px rgba(0,0,0,0.7);
   font-size: 48px;
   font-weight: bold;
@@ -18,7 +18,7 @@
 
 .homebanner h2 {
   margin: 0;
-  color: white;
+  color: #F4F4F4;
   text-shadow: 3px 3px 3px rgba(0,0,0,0.7);
   font-size: 24px;
   font-weight: bold;
@@ -28,7 +28,7 @@
 
 .homebanner p {
   font-size: 20px;
-  color: white;
+  color: #F4F4F4;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   text-align: center;
 }

@@ -86,9 +86,22 @@
   margin-bottom: 10px;
 }
 
-#pricename > h2 {
+#dayprice {
+  display: flex;
+  text-align: center;
+}
+
+#dayprice > i {
   font-size: 32px;
   color: $primary;
+  padding-top: 2px;
+}
+
+#dayprice > h2 {
+  font-size: 32px;
+  color: $primary;
+  margin-bottom: 0px;
+  padding-left: 5px;
 }
 
 #laptop-address {

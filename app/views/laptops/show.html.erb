@@ -5,7 +5,10 @@
     <div class="laptop-details">
       <div id="pricename">
         <h1><%= @laptop.name %></h1>
-        <h2><%= @laptop.price_per_day %> €/day</h2>
+        <div id="dayprice">
+          <i class="fas fa-euro-sign"></i>
+          <h2><%= @laptop.price_per_day %> / day</h2>
+        </div>
       </div>
       <div id="laptop-address">
         <i class="fas fa-map-marker-alt"></i>
