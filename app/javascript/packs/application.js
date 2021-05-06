@@ -29,11 +29,13 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
-import { showTotalPrice } from '../components/price'
+import { showTotalPrice } from '../components/price';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   showTotalPrice();
+  initFlatpickr();
 })
 
 // Internal imports, e.g:
