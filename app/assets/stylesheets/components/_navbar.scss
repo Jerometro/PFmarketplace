@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #F4F4F4;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,13 +13,29 @@
 
 .nav-item {
   border-radius : 5px;
-  margin: 10px 10px;
+  margin: 14px 14px;
 }
 
 .btn-logo_home {
   justify-content: left;
+  display: flex;
+  align-items: center;
+  border-radius : 5px;
+  margin: 10px 10px;
+  vertical-align: middle;
 }
 
-#current-user {
-  padding: 15px;
+.avatar .dropdown-toggle {
+  margin: 0px 0px 16px;
 }
+
+.menu-list {
+  display: flex;
+  align-items: center;
+}
+
+
+//p {
+  //margin-top: 0;
+  //margin-bottom: 0rem;
+//}
