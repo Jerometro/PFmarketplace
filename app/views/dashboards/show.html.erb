@@ -1,37 +1,35 @@
-<div class="container mt-3">
+<div class="container">
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'user-booked')" id="defaultOpen">My Booked Laptops (<%= @booked.count %>)</button>
+  <button class="tablinks" onclick="openTab(event, 'user-bookings')">My Bookings (<%= @bookings.count %>)</button>
+  <button class="tablinks" onclick="openTab(event, 'user-laptops')">My Laptops (<%= @laptops.count %>)</button>
+</div>
 
-  <div class="row">
-    <div class="col-12">
-      <h2>My Laptops(<%= @laptops.count %>)</h2>
-    </div>
-    <%= link_to "Back to Laptops", laptops_path, class: "btn btn-warning" %>
-  </div>
-
-<div class="laptops">
-  <% @laptops.each do |l| %>
-    <div class="dashboard-laptop-card">
-      <div>
+<div id="user-laptops" class="tabcontent">
+  <div class="laptops">
+    <% @laptops.each do |l| %>
+      <div class="dashboard-laptop-card">
         <div>
-          <h4><%= l.name %></h4>
-          <p> <%= l.description %> </p>
-          <div class="price">
-            <p><%= l.price_per_day%> €/day</p>
-          </div>
-          <div class="config">
-            <%= link_to "Edit", edit_laptop_path(l), class: "btn btn-outline-warning" %>
-            <%= link_to "Delete", laptop_path(l), method: :delete, data: { confirm: " Are you sure ? "}, class: "btn btn-outline-danger" %>
+          <div>
+            <h4><%= l.name %></h4>
+            <p> <%= l.description %> </p>
+            <div class="price">
+              <p><%= l.price_per_day%> €/day</p>
+            </div>
+            <div class="config">
+              <%= link_to "Edit", edit_laptop_path(l), class: "btn btn-outline-warning" %>
+              <%= link_to "Delete", laptop_path(l), method: :delete, data: { confirm: " Are you sure ? "}, class: "btn btn-outline-danger" %>
+            </div>
           </div>
         </div>
+        <img src="<%= cl_image_path(l.photo.key) %>" alt="">
       </div>
-      <img src="<%= cl_image_path(l.photo.key) %>" alt="">
-    </div>
-  <% end %>
-
+    <% end %>
+  </div>
 </div>
-<div class="container-bookings">
-  <div class="row">
-    <div class="col-6">
-      <h2>My Bookings(<%= @bookings.count %>)</h2>
+
+
+<div id="user-bookings" class="tabcontent">
       <div class="bookings">
         <% @bookings.each do |b| %>
           <div class="booking-card">
@@ -57,10 +55,10 @@
           </div>
         <% end %>
       </div>
-    </div>
+</div>
 
-    <div class="col-6">
-      <h2>My Booked Laptops(<%= @booked.count %>)</h2>
+
+<div id="user-booked" class="tabcontent">
       <div class="bookings">
         <% @booked.each do |b| %>
           <div class="booking-card">
@@ -84,7 +82,23 @@
           </div>
         <% end %>
       </div>
-    </div>
-  </div>
 </div>
+<%= link_to "Back to Laptops", laptops_path %>
 </div>
+
+<script>
+function openTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  document.getElementById("defaultOpen").click();
+</script>

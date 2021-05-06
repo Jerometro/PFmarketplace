@@ -3,29 +3,32 @@
 <div id="full-laptop-show">
   <div id="full-card">
     <div class="laptop-details">
-      <h1><%= @laptop.name %></h1>
-      <p><%= @laptop.address %></p>
-      <p> Owned by <%= @laptop.user.first_name.capitalize %> </p>
-    </div>
-    <div class="laptop-details">
-      <h3>Description</h3>
-      <p> <%= @laptop.description %> </p>
-    </div>
-    <div class="laptop-details">
-      <h2>Price</h2>
-        <div class="laptop-infos">
-          <div class="price">
-            <p><%= @laptop.price_per_day %> €/day</p>
-          </div>
+      <div id="pricename">
+        <h1><%= @laptop.name %></h1>
+        <div id="dayprice">
+          <i class="fas fa-euro-sign"></i>
+          <h2><%= @laptop.price_per_day %> / day</h2>
+        </div>
       </div>
+      <div id="laptop-address">
+        <i class="fas fa-map-marker-alt"></i>
+        <p><%= @laptop.address %></p>
+      </div>
+    </div>
+    <div class="laptop-details">
+      <h4><%= @laptop.description %></h4>
     </div>
   </div>
     <% if (@laptop.user != current_user) %>
       <div id="book-laptop">
         <h2>Book this laptop !</h2>
         <%= render "bookings/new" %>
+        <br>
+        <div id="full-price">
+          <p>Total Price :</p>
+          <p id="total-price" data-price-per-day="<%= @laptop.price_per_day %>" >0€</p>
+        </div>
       </div>
     <% else %>
-      <%= link_to "Back to laptops", laptops_path(@laptop), class: "btn-show btn btn-warning" %>
     <% end %>
 </div>

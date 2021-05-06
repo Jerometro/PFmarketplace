@@ -3,7 +3,12 @@ class LaptopsController < ApplicationController
   before_action :set_laptop, only: [:destroy, :show, :edit, :update]
 
   def index
-    @laptops = Laptop.all
+      if params[:query].present?
+        sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
+        @laptops = Laptop.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @laptops = Laptop.all
+      end
 
     # the `geocoded` scope filters only laptops with coordinates (latitude & longitude)
     @markers = @laptops.geocoded.map do |laptop|
