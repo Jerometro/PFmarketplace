@@ -2,14 +2,14 @@
 
   <div class="cards">
     <% @laptops.each do |laptop| %>
-     <%= link_to laptop_path(laptop) do %>
+     <%= link_to laptop_path(laptop), target: "_blank" do %>
       <div class="">
         <div class="laptop-card">
           <img src="<%= cl_image_path(laptop.photo.key) %>" alt="">
          <div class="laptop-card-text">
-            <h4> <%= laptop.name %> </h4>
+            <h3> <%= laptop.name %> </h3>
             <p><%= laptop.description %></p>
-            <p><strong><%= laptop.price_per_day %> €/day </strong></p>
+            <h2><strong><%= laptop.price_per_day %> €/day </strong></h2>
           </div>
         </div>
       </div>
