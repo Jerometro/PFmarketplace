@@ -1,34 +1,27 @@
-<head>
-  <script src="https://kit.fontawesome.com/773f0af078.js" crossorigin="anonymous"></script>
-</head>
+<div class="index-container">
 
-<body>
-
-
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>Laptops available(<%= @laptops.count %>)</h1>
-    </div>
-
-<div class="row">
-  <% @laptops.each do |laptop| %>
-    <div class="col-4">
-      <div class="laptop-card">
-        <img src="<%= cl_image_path(laptop.photo.key) %>" alt="">
-        <div>
-          <h4> <%= link_to laptop.name, laptop_path(laptop) %> </h4>
-          <p><strong>Description:</strong> <%= laptop.description %></p>
-          <p><%= laptop.price_per_day %> €/day </p>
+  <div class="cards">
+    <% @laptops.each do |laptop| %>
+     <%= link_to laptop_path(laptop) do %>
+      <div class="">
+        <div class="laptop-card">
+          <img src="<%= cl_image_path(laptop.photo.key) %>" alt="">
+         <div class="laptop-card-text">
+            <h4> <%= laptop.name %> </h4>
+            <p><%= laptop.description %></p>
+            <p><strong><%= laptop.price_per_day %> €/day </strong></p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div id="map"
-         style="width: 100%; height: 600px;"
-         data-markers="<%= @markers.to_json %>"
-         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+    <% end %>
+    <% end %>
   </div>
 
-</body>
+  <div id="map"
+       style="width: 50%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+</div>
+

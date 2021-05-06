@@ -33,6 +33,7 @@ class BookingsController < ApplicationController
     @booking.status = "accepted"
     @booking.save
     redirect_to dashboard_path
+
   end
 
   def deny
