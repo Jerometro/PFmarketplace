@@ -2,7 +2,7 @@
 
   <div class="cards">
     <% @laptops.each do |laptop| %>
-     <%= link_to laptop_path(laptop), target: "_blank" do %>
+     <%= link_to laptop_path(laptop) do %>
       <div class="">
         <div class="laptop-card">
           <img src="<%= cl_image_path(laptop.photo.key) %>" alt="">
