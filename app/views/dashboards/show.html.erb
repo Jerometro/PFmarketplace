@@ -82,47 +82,7 @@
 <div id="user-booked" class="tabcontent">
       <div class="bookings">
         <% @booked.each do |b| %>
-          <div class="booking-card">
-            <div>
-              <div class="book-config">
-            <h2><%= b.laptop.name %></h2>
-            <div class="calendar">
-              <i class="far fa-calendar-alt"></i>
-              <p>From <%= b.start_date.strftime("%d/%m/%y") %> to <%= b.end_date.strftime("%d/%m/%y") %></p>
-            </div>
-            <div class="price">
-              <h2> <%= b.price %></h2>
-              <i class="fas fa-euro-sign"></i>
-            </div>
-            <% if b.status == "pending"%>
-              <div class="accept-deny">
-              <%= link_to "Accept", accept_booking_path(b), method: :patch, class: "btn btn-outline-success" %>
-              <%= link_to "Deny", deny_booking_path(b), method: :patch, class: "btn btn-outline-danger" %>
-              </div>
-              <% else %>
-                <% if b.status == "accepted" %>
-                <div id="accepted">
-                  <i class="fas fa-check"></i>
-                  <p>Accepted</p>
-                </div>
-                <% end %>
-                <% if b.status == "denied" %>
-                <div id="denied">
-                  <i class="fas fa-times"></i>
-                  <p>Denied</p>
-                </div>
-                <% end %>
-                <% if b.status == "cancelled" %>
-                <div class="cancelled-status">
-                  <i class="fas fa-times"></i>
-                  <p>Cancelled</p>
-                </div>
-                <% end %>
-            <% end %>
-            </div>
-            </div>
-            <img src="<%= cl_image_path(b.laptop.photo.key) %>" alt="">
-          </div>
+          <%= render "booked_laptop", b: b %>
         <% end %>
       </div>
 </div>

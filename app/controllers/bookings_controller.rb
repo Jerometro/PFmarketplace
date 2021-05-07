@@ -32,8 +32,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "accepted"
     @booking.save
-    redirect_to dashboard_path
-
+    render json: { response: render_to_string(partial: "dashboards/booked_laptop.html", locals: { b: @booking }) }
   end
 
   def deny
