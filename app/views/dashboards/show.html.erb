@@ -1,7 +1,7 @@
 <div class="container">
 <div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'user-booked')" id="defaultOpen">My Booked Laptops (<%= @booked.count %>)</button>
-  <button class="tablinks" onclick="openTab(event, 'user-bookings')">My Bookings (<%= @bookings.count %>)</button>
+  <button class="tablinks" onclick="openTab(event, 'user-bookings')" id="defaultOpen">My Bookings (<%= @bookings.count %>)</button>
+  <button class="tablinks" onclick="openTab(event, 'user-booked')">My Booked Laptops (<%= @booked.count %>)</button>
   <button class="tablinks" onclick="openTab(event, 'user-laptops')">My Laptops (<%= @laptops.count %>)</button>
 </div>
 
@@ -11,10 +11,12 @@
       <div class="dashboard-laptop-card">
         <div>
           <div>
-            <h4><%= l.name %></h4>
+            <h2><%= l.name %></h2>
             <p> <%= l.description %> </p>
             <div class="price">
-              <p><%= l.price_per_day%> €/day</p>
+              <h2><%= l.price_per_day%></h2>
+              <i class="fas fa-euro-sign"></i>
+              <h2>/day</h2>
             </div>
             <div class="config">
               <%= link_to "Edit", edit_laptop_path(l), class: "btn btn-outline-warning" %>
@@ -35,18 +37,37 @@
           <div class="booking-card">
             <div>
               <div class="book-config">
-                <h4><%= b.laptop.name %> ( <%= b.status %> )</h4>
-                <p> Booked from <%= b.start_date.strftime("%d/%m/%y") %> to <%= b.end_date.strftime("%d/%m/%y") %></p>
+                <div class="name-status">
+                  <h2><%= b.laptop.name %></h2>
+                  <% if b.status == "pending" %>
+                      <i class="far fa-clock pending-status"></i>
+                      <h4 class="pending-status"><%= b.status.capitalize %></h4>
+                  <% end %>
+                  <% if b.status == "denied" %>
+                      <i class="fas fa-times denied-status"></i>
+                      <h4 class="denied-status"><%= b.status.capitalize %></h4>
+                  <% end %>
+                  <% if b.status == "accepted" %>
+                      <i class="fas fa-check accepted-status"></i>
+                      <h4 class="accepted-status"><%= b.status.capitalize %></h4>
+                  <% end %>
+                </div>
+                <div class="calendar">
+                  <i class="far fa-calendar-alt"></i>
+                  <p> Booked from <%= b.start_date.strftime("%d/%m/%y") %> to <%= b.end_date.strftime("%d/%m/%y") %></p>
+                </div>
                 <div class="price">
-                  <p>Total price: </p>
-                  <p> <%= b.price %>€</p>
+                  <h2> <%= b.price %></h2>
+                  <i class="fas fa-euro-sign"></i>
                 </div>
                 <% if b.status != "cancelled" %>
                   <div class="cancel">
                     <%= link_to "Cancel", cancel_booking_path(b), method: :patch, class: "btn btn-outline-warning" %>
                   </div>
                   <% else %>
-                  <div>
+                  <div class="cancelled-status">
+                    <i class="fas fa-times"></i>
+                    <p><%= b.status.capitalize %></p>
                   </div>
                 <% end %>
               </div>
@@ -64,17 +85,39 @@
           <div class="booking-card">
             <div>
               <div class="book-config">
-            <h4><%= b.laptop.name %></h4>
-            <p>Booked by <%= b.user.first_name %> from <%= b.start_date.strftime("%d/%m/%y") %> to <%= b.end_date.strftime("%d/%m/%y") %></p>
+            <h2><%= b.laptop.name %></h2>
+            <div class="calendar">
+              <i class="far fa-calendar-alt"></i>
+              <p>From <%= b.start_date.strftime("%d/%m/%y") %> to <%= b.end_date.strftime("%d/%m/%y") %></p>
+            </div>
             <div class="price">
-              <p>Total Price: </p>
-              <p> <%= b.price %>€</p>
+              <h2> <%= b.price %></h2>
+              <i class="fas fa-euro-sign"></i>
             </div>
             <% if b.status == "pending"%>
               <div class="accept-deny">
               <%= link_to "Accept", accept_booking_path(b), method: :patch, class: "btn btn-outline-success" %>
               <%= link_to "Deny", deny_booking_path(b), method: :patch, class: "btn btn-outline-danger" %>
               </div>
+              <% else %>
+                <% if b.status == "accepted" %>
+                <div id="accepted">
+                  <i class="fas fa-check"></i>
+                  <p>Accepted</p>
+                </div>
+                <% end %>
+                <% if b.status == "denied" %>
+                <div id="denied">
+                  <i class="fas fa-times"></i>
+                  <p>Denied</p>
+                </div>
+                <% end %>
+                <% if b.status == "cancelled" %>
+                <div class="cancelled-status">
+                  <i class="fas fa-times"></i>
+                  <p>Cancelled</p>
+                </div>
+                <% end %>
             <% end %>
             </div>
             </div>

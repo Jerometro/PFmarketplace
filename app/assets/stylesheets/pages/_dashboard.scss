@@ -83,3 +83,91 @@
   justify-content: space-between;
 }
 
+#name-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+#denied {
+  display: flex;
+  align-items: baseline;
+  color: $danger;
+
+  p {
+    margin-left: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+#accepted {
+  display: flex;
+  align-items: baseline;
+  color: $success;
+
+  p {
+    margin-left: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.price  {
+  display:flex;
+  align-items: baseline;
+
+  h2, i {
+    color: $primary;
+  }
+
+  i {
+    font-size: 20px;
+    padding-left: 5px;
+  }
+}
+
+.calendar {
+  display: flex;
+  align-items: baseline;
+
+  i {
+    color: $danger;
+  }
+
+  p {
+    padding-left: 5px;
+    font-size: 600;
+  }
+}
+
+.name-status {
+  display: flex;
+  align-items: baseline;
+
+  i {
+    padding-left: 18px;
+  }
+  h4 {
+    padding-left: 5px;
+  }
+
+  .pending-status {
+    color: $primary;
+  }
+
+  .accepted-status {
+    color: $success;
+  }
+
+  .denied-status {
+    color: $danger;
+  }
+}
+
+.cancelled-status {
+  display: flex;
+  align-items: baseline;
+  color: $warning;
+
+ p {
+  padding-left: 5px;
+ }
+}
