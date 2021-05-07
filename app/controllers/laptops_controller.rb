@@ -7,7 +7,7 @@ class LaptopsController < ApplicationController
         sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
         @laptops = Laptop.where(sql_query, query: "%#{params[:query]}%")
       else
-        @laptops = Laptop.all
+        @laptops = Laptop.all.order(created_at: :desc)
       end
 
     # the `geocoded` scope filters only laptops with coordinates (latitude & longitude)

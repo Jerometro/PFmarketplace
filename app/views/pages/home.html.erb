@@ -3,17 +3,7 @@
     <h1>Welcome to Rent-a-Laptop</h1>
     <h2>Rent the laptop you need in 3 minutes!</h2>
 
-      <%= form_tag laptops_path, method: :get, class: "simple_form search" do %>
-        <div class="search-form-control form-group">
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control string required",
-            placeholder: "Find a laptop"
-          %>
-          <button name="button" type="submit" class="btn btn-primary">
-           <i class="fas fa-search"></i> Rent now
-          </button>
-        </div>
-        <% end %>
+     <%= render 'shared/searchbar' %>
+
   </div>
 
