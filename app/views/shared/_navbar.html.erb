@@ -3,7 +3,7 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://images.pexels.com/photos/5797997/pexels-photo-5797997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" %>
     <% end %>
-    Rent-a-Laptop
+    <%= link_to "Rent-a-Laptop", root_path, class: "nav-link" %>
   </div>
 
 <!--   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto menu-list">
         <li class="nav-item">
-          <%= link_to "Add a laptop", new_laptop_path, class:"btn btn-link" %>
+          <%= link_to "Add a laptop", new_laptop_path, class: "nav-link" %>
         </li>
       <% if user_signed_in? %>
         <li> Welcome back <%= current_user.first_name %>! </li>
