@@ -1,14 +1,14 @@
 <div class="container">
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'user-bookings')" id="defaultOpen">My Bookings (<%= @bookings.count %>)</button>
-  <button class="tablinks" onclick="openTab(event, 'user-booked')">My Booked Laptops (<%= @booked.count %>)</button>
-  <button class="tablinks" onclick="openTab(event, 'user-laptops')">My Laptops (<%= @laptops.count %>)</button>
+  <button class="tablinks" onclick="openTab(event, 'user-booked')">My Booked Cars (<%= @booked.count %>)</button>
+  <button class="tablinks" onclick="openTab(event, 'user-cars')">My Cars (<%= @cars.count %>)</button>
 </div>
 
-<div id="user-laptops" class="tabcontent">
-  <div class="laptops">
-    <% @laptops.each do |l| %>
-      <div class="dashboard-laptop-card">
+<div id="user-cars" class="tabcontent">
+  <div class="cars">
+    <% @cars.each do |l| %>
+      <div class="dashboard-car-card">
         <div>
           <div>
             <h2><%= l.name %></h2>
@@ -19,8 +19,8 @@
               <h2>/day</h2>
             </div>
             <div class="config">
-              <%= link_to "Edit", edit_laptop_path(l), class: "btn btn-outline-warning" %>
-              <%= link_to "Delete", laptop_path(l), method: :delete, data: { confirm: " Are you sure ? "}, class: "btn btn-outline-danger" %>
+              <%= link_to "Edit", edit_car_path(l), class: "btn btn-outline-warning" %>
+              <%= link_to "Delete", car_path(l), method: :delete, data: { confirm: " Are you sure ? "}, class: "btn btn-outline-danger" %>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@
             <div>
               <div class="book-config">
                 <div class="name-status">
-                  <h2><%= b.laptop.name %></h2>
+                  <h2><%= b.car.name %></h2>
                   <% if b.status == "pending" %>
                       <i class="far fa-clock pending-status"></i>
                       <h4 class="pending-status"><%= b.status.capitalize %></h4>
@@ -72,7 +72,7 @@
                 <% end %>
               </div>
             </div>
-            <img src="<%= cl_image_path(b.laptop.photo.key) %>" alt="">
+            <img src="<%= cl_image_path(b.car.photo.key) %>" alt="">
           </div>
         <% end %>
       </div>
@@ -82,11 +82,11 @@
 <div id="user-booked" class="tabcontent">
       <div class="bookings">
         <% @booked.each do |b| %>
-          <%= render "booked_laptop", b: b %>
+          <%= render "booked_car", b: b %>
         <% end %>
       </div>
 </div>
-<%= link_to "Back to Laptops", laptops_path %>
+<%= link_to "Back to Cars", cars_path %>
 </div>
 
 <script>

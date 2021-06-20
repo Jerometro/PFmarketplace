@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_laptop, only: [:new, :create]
+  before_action :set_car, only: [:new, :create]
 
   def new
     @booking = Booking.new
@@ -11,9 +11,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.laptop = @laptop
+    @booking.car = @car
     days = (@booking.end_date - @booking.start_date).to_i / SECONDS_IN_DAYS + 1
-    @booking.price = @laptop.price_per_day * days
+    @booking.price = @car.price_per_day * days
     @booking.user = current_user
 
     redirect_to dashboard_path and return if @booking.save
@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "accepted"
     @booking.save
-    render json: { response: render_to_string(partial: "dashboards/booked_laptop.html", locals: { b: @booking }) }
+    render json: { response: render_to_string(partial: "dashboards/booked_car.html", locals: { b: @booking }) }
   end
 
   def deny
@@ -44,8 +44,8 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_laptop
-    @laptop = Laptop.find(params[:laptop_id])
+  def set_car
+    @car = Car.find(params[:car_id])
   end
 
   def booking_params

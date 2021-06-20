@@ -1,21 +1,21 @@
 class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_laptop, only: [:destroy, :show, :edit, :update]
+  before_action :set_car, only: [:destroy, :show, :edit, :update]
 
   def index
       if params[:query].present?
         sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
-        @laptops = Laptop.where(sql_query, query: "%#{params[:query]}%")
+        @cars = Car.where(sql_query, query: "%#{params[:query]}%")
       else
-        @laptops = Laptop.all.order(created_at: :desc)
+        @cars = Car.all.order(created_at: :desc)
       end
 
-    # the `geocoded` scope filters only laptops with coordinates (latitude & longitude)
-    @markers = @laptops.geocoded.map do |laptop|
+    # the `geocoded` scope filters only cars with coordinates (latitude & longitude)
+    @markers = @cars.geocoded.map do |car|
       {
-        lat: laptop.latitude,
-        lng: laptop.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { laptop: laptop }),
+        lat: car.latitude,
+        lng: car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
         image_url: helpers.asset_url('map-marker.png')
       }
     end
@@ -23,21 +23,21 @@ class CarsController < ApplicationController
 
   def show
     @booking = Booking.new
-    @laptop = Laptop.find(params[:id])
+    @car = Car.find(params[:id])
   end
 
   def new
-    @laptop = Laptop.new
+    @car = Car.new
   end
 
   def create
-    @laptop = Laptop.new(laptop_params)
-    @laptop.user = current_user
-    @laptop.save ? (redirect_to dashboard_path) : (render :new)
+    @car = Car.new(car_params)
+    @car.user = current_user
+    @car.save ? (redirect_to dashboard_path) : (render :new)
   end
 
   def destroy
-    @laptop.destroy
+    @car.destroy
     redirect_to dashboard_path
   end
 
@@ -45,7 +45,7 @@ class CarsController < ApplicationController
   end
 
   def update
-    if @laptop.update(laptop_params)
+    if @car.update(car_params)
       redirect_to dashboard_path
     else
       render :edit
@@ -54,11 +54,11 @@ class CarsController < ApplicationController
 
   private
 
-  def set_laptop
-    @laptop = Laptop.find(params[:id])
+  def set_car
+    @car = Car.find(params[:id])
   end
 
-  def laptop_params
-    params.require(:laptop).permit(:address, :price_per_day, :name, :description, :photo)
+  def car_params
+    params.require(:car).permit(:address, :price_per_day, :name, :description, :photo)
   end
 end

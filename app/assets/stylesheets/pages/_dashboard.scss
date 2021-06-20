@@ -54,7 +54,7 @@
   margin: 1rem 0 1rem 0;
 }
 
-.dashboard-laptop-card {
+.dashboard-car-card {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -67,14 +67,14 @@
   overflow: hidden;
 }
 
-.dashboard-laptop-card > img {
+.dashboard-car-card > img {
   height: 100%;
   width: 30%;
   object-fit: cover;
   overflow: hidden;
 }
 
-.dashboard-laptop-card > div {
+.dashboard-car-card > div {
   padding: 20px;
 }
 

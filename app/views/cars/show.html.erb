@@ -1,0 +1,34 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path(@car.photo.key) %>')">
+</div>
+<div id="full-car-show">
+  <div id="full-card">
+    <div class="car-details">
+      <div id="pricename">
+        <h1><%= @car.name %></h1>
+        <div id="dayprice">
+          <i class="fas fa-euro-sign"></i>
+          <h2><%= @car.price_per_day %> / day</h2>
+        </div>
+      </div>
+      <div id="car-address">
+        <i class="fas fa-map-marker-alt"></i>
+        <p><%= @car.address %></p>
+      </div>
+    </div>
+    <div class="car-details">
+      <h4><%= @car.description %></h4>
+    </div>
+  </div>
+    <% if (@car.user != current_user) %>
+      <div id="book-car">
+        <h2>Book this car !</h2>
+        <%= render "bookings/new" %>
+        <br>
+        <div id="full-price">
+          <p>Total Price :</p>
+          <p id="total-price" data-price-per-day="<%= @car.price_per_day %>" ><%= @car.price_per_day %>€</p>
+        </div>
+      </div>
+    <% else %>
+    <% end %>
+</div>

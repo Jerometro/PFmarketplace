@@ -1,11 +1,11 @@
 
 <div>
-  <%= form_tag laptops_path, method: :get, class: "simple_form search" do %>
+  <%= form_tag cars_path, method: :get, class: "simple_form search" do %>
     <div class="search-form-control form-group">
       <%= text_field_tag :query,
         params[:query],
         class: "form-control string required",
-        placeholder: "Find a laptop"
+        placeholder: "Find a car"
       %>
       <button name="button" type="submit" class="btn btn-primary">
        <i class="fas fa-search"></i> Rent now

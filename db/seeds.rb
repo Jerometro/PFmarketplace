@@ -6,23 +6,17 @@ require 'open-uri'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-  Booking.destroy_all
-  Laptop.destroy_all
+
+  # Booking.destroy_all
+  # Laptop.destroy_all
+  Car.destroy_all
   User.destroy_all
 
 
-file1 = URI.open("https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file2 = URI.open("https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file3 = URI.open("https://images.pexels.com/photos/7091926/pexels-photo-7091926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file4 = URI.open("https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file5 = URI.open("https://images.pexels.com/photos/6696871/pexels-photo-6696871.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file6 = URI.open("https://images.pexels.com/photos/6696863/pexels-photo-6696863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file7 = URI.open("https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file8 = URI.open("https://images.pexels.com/photos/169484/pexels-photo-169484.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file9 = URI.open("https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file10 = URI.open("https://images.pexels.com/photos/38568/apple-imac-ipad-workplace-38568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file11 = URI.open("https://images.pexels.com/photos/4620862/pexels-photo-4620862.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-file12 = URI.open("https://images.pexels.com/photos/6598/coffee-desk-laptop-notebook.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+file1 = URI.open("https://www.flickr.com/photos/idiapo/13903929806/in/photolist-nbDgVG-2jWeSBV-G4138V-4AnFE2-8z7YCb-2innFaU-97VpsX-2k59Sb7-2hW8iKT-8z4RYg-2hWbTFS-29B3CnD-hTQq1F-EDcgNu-4AnFKT-2ksJ9rw-2ksMRLN-mfNFge-2gUBgbb-fj5wfY-6XjY3o-9k7CKx-c2aN8-2jGiWu5-X6p4qA-2gUAwqB-2hE1R8r-NZovAC-2edqjtR-8TQ9FP-29GSG2v-UYzH3K-8TQ9GH-EDcsc5-dkydrK-bxqkwG-8TQ9EZ-X5w871-nSGsDv-2jza92p-2hDX2vz-dnrmSU-8TQ9Hv-2kAunX7-2kEYWLe-MtfReZ-2kEYWMm-2eUh4FY-7M5AxA-oeBfH4/")
+file2 = URI.open("https://www.flickr.com/photos/164173524@N07/50845087522/in/photolist-2kt1n73-8j54Un-ccoYtU-Je1Q5m-USXWPf-PcFyNb-2kdjT46-2icynTg-2kdjT3E-Kts44x-2hv2DiT-9eCbtM-TnWGxJ-2koiCq1-YFbaFm-2hSep3n-2dCkCky-2fUmauW-S5zj54-wN74bQ-2iQEwCN-2cjbQtZ-25JZU59-MyGkZY-CjnEbj-BLFoPW-aztVgb-2iLitMc-HJmaVt-Zk54hu-2j2DPL9-Z2u4Uf-2kVjQdw-Cb3AVe-261LKj8-2kWrjvc-2m6yPSc-dTGHri-2kTYfGU-qwFGGR-2kDKPch-2j2Bd9t-2k3XW4M-2jhDXGw-dK49xz-nzLSFn-2ibbrse-bzfYCE-XSVZSt-2kHxxEk")
+file3 = URI.open("https://www.flickr.com/photos/69929929@N06/7169811160/in/photolist-bVza4N-bVz9ss-bVyLzy-bVyRu3-2jw3dkk-bVzev1-bVyMq3-bVz5gE-bVzjby-bVz5FN-bVz7T1-bVz3mU-bVzgbj-bVyNgo-BzPg1x-bVz8g3-TQaJdC-bVyU1E-bVz5y1-bVz3s7-2bm5KjA-bVz7Hs-bVz8bN-bVyWoL-bVyV5S-V7EtYV-KrU1dx-bVzgXo-bVz1UY-bVyLSC-2cs3pHp-bVzi9w-6M61Xd-bVz59u-bVzbbb-2k6wm3G-bVz8Cw-bVzizJ-bVz21o-2k8wHWi-bVyMcY-24t44Hu-29Cxe4d-2kx1nrU-28GSNbP-2iw9LCQ-KJzanG-PN8hgA-bVyRNQ-bVz3ZJ")
+file4 = URI.open("https://www.flickr.com/photos/65005481@N06/51114678782/in/photolist-2kSQ6cd-2kSRHH9-2kBRpzC-2kEB2aH-2kUTCQT-2kM1nwQ-2kBSoxB-2kwPwFX-2kM1nCr-2kRCG1h-2kvv39P-2m26U2G-2jY7KjN-2kM57mV-2m2Pqcv-2kkHfML-2kDLS7f-2kZW7Lp-2kBAYtd-2kM1nBj-2kM57qh-2kM57mE-2kByCYx-2kM1nAs-2kPH9zT-2kHjq7a-2kxKyS8-2kvBCGP-2kvBCHk-2kU7jr6-2m2psKZ-2ku38Et-2kvKQYP-2m6upbE-2m5EkCM-SuqduG-2ktXWVg-2ku38ED-2m23stT-2kMrNtB-2kvC6F4-2deM2AH-2m2vuns-2m5q3CP-QW5rXT-245XDEv-2kZ6Ukr-2kptG5U-2kNjHiB-2m4Ahqu")
 
 bertrand = User.create!({
   first_name: 'Bertrand',
@@ -52,122 +46,47 @@ marine = User.create!({
   password: '12345678'
 })
 
-mac_de_serge = Laptop.new({
-  name: 'Apple MacBook Pro 13 pouces Retina',
-  description: 'Very good machine. Grey. Core i7 3,1 GHz - SSD 512 Go - 16 Go AZERTY - Français',
-  address: '17 avenue de la République 35000 Rennes',
-  price_per_day: 150,
+
+
+twingo_de_serge = Car.new({
+  name: 'eTwingo',
+  description: 'Very good car',
+  address: 'Estr. da Pontinha 7, 1600-582 Lisboa, Portugal',
+  price_per_day: 40,
   user: serge
 })
-mac_de_serge.photo.attach(io: file1, filename: 'mac.jpeg', content_type: 'images/jpeg')
-mac_de_serge.save!
+twingo_de_serge.photo.attach(io: file1, filename: 'twingo.jpeg', content_type: 'images/jpeg')
+twingo_de_serge.save!
 
-lenovo_de_serge = Laptop.new({
-  name: 'Lenovo - 15,6 pouces',
-  description: 'Super fast laptop. Processeur Intel® Core™ i5-1035G1 10e génération',
-  address: '17 avenue de la République 35000 Rennes',
-  price_per_day: 150,
-  user: serge
+
+clio_de_marine = Car.new({
+  name: 'eClio',
+  description: 'Very good car',
+  address: 'Av. Nuno Krus Abecassis 4-40, 1750-456 Lisboa, Portugal',
+  price_per_day: 50,
+  user: marine
 })
-lenovo_de_serge.photo.attach(io: file2, filename: 'leno.jpeg', content_type: 'images/jpeg')
-lenovo_de_serge.save!
+clio_de_marine.photo.attach(io: file2, filename: 'clio.jpeg', content_type: 'images/jpeg')
+clio_de_marine.save!
 
-msi_de_serge = Laptop.new({
-  name: 'MSI - 15,6 pouces',
-  description: 'Ideal for gaming. Intel Core i7-9750H 12 Mo 2.6 GHz',
-  address: '17 avenue de la République 35000 Rennes',
-  price_per_day: 150,
-  user: serge
+
+micra_de_bertrand = Car.new({
+  name: 'eMicra',
+  description: 'Very good car',
+  address: 'R. Jacinto Duarte 131-45, 2660-270 Santo António dos Cavaleiros, Portugal',
+  price_per_day: 45,
+  user: bertrand
 })
-msi_de_serge.photo.attach(io: file3, filename: 'msi.jpeg', content_type: 'images/jpeg')
-msi_de_serge.save!
+micra_de_bertrand.photo.attach(io: file3, filename: 'micra.jpeg', content_type: 'images/jpeg')
+micra_de_bertrand.save!
 
-lenovo_de_paul = Laptop.new({
-  name: 'Lenovo - 13 pouces',
-  description: 'Black color, a bit used. Processeur Intel® Core™ i5-1035G1 10e génération',
-  address: '30 avenue Charles de Gaulle 35000 Rennes',
+
+fiat500_de_paul = Car.new({
+  name: 'eFiat500',
+  description: 'Very good car',
+  address: 'Av. José Torres 2, Amadora, Portugal',
   price_per_day: 50,
   user: paul
 })
-lenovo_de_paul.photo.attach(io: file4, filename: 'lenovo.jpeg', content_type: 'images/jpeg')
-lenovo_de_paul.save!
-
-mac_de_paul = Laptop.new({
-  name: 'Apple MacBook Air - 13 pouces',
-  description: 'Spacegrey, brand new. Core i7 3,1 GHz - SSD 512 Go - 16 Go AZERTY - Français',
-  address: '30 avenue Charles de Gaulle 35000 Rennes',
-  price_per_day: 100,
-  user: paul
-})
-mac_de_paul.photo.attach(io: file9, filename: 'mac1.jpeg', content_type: 'images/jpeg' )
-mac_de_paul.save!
-
-msi_de_paul = Laptop.new({
-  name: 'MSI - 17,3 pouces',
-  description: 'Ideal for designers. Intel Core i7-9750H 12 Mo 2.6 GHz',
-  address: '17 avenue de la République 35000 Rennes',
-  price_per_day: 70,
-  user: paul
-})
-msi_de_paul.photo.attach(io: file11, filename: 'msi1.jpeg', content_type: 'images/jpeg')
-msi_de_paul.save!
-
-mac_de_marine = Laptop.new({
-  name: 'Apple MacBook Pro - 15 pouces',
-  description: 'Ideal for web development. Core i7 3,1 GHz - SSD 512 Go - 16 Go AZERTY - Français',
-  address: '24 rue du Bois 35000 Rennes',
-  price_per_day: 100,
-  user: marine
-})
-mac_de_marine.photo.attach(io: file10, filename: 'mac2.jpeg', content_type: 'images/jpeg' )
-mac_de_marine.save!
-
-asus_de_marine = Laptop.new({
-  name: 'Asus - 15.6 pouces',
-  description: 'PC Ultra-Portable. Intel i5-1035G1 - 8 Go RAM - 256 Go SSD - Windows 10',
-  address: '24 rue du Bois 35000 Rennes',
-  price_per_day: 30,
-  user: marine
-})
-asus_de_marine.photo.attach(io: file5, filename: 'asus.jpeg', content_type: 'images/jpeg')
-asus_de_marine.save!
-
-acer_de_marine = Laptop.new({
-  name: 'Acer Swift 3 - 13,5 pouces',
-  description: 'A bit old but very handy. Full HD (1920 x 1080) 16:9 IPS 16 Go, LPDDR4X 1 To SSD',
-  address: '24 rue du Bois 35000 Rennes',
-  price_per_day: 20,
-  user: marine
-})
-acer_de_marine.photo.attach(io: file6, filename: 'acer.jpeg', content_type: 'images/jpeg')
-acer_de_marine.save!
-
-mac_de_bertrand = Laptop.new({
-  name: 'Apple MacBook Air - 15 pouces',
-  description: 'Light and easy to carry. Core i7 3,1 GHz - SSD 512 Go - 16 Go AZERTY - Français',
-  address: '30 rue de La Plaine 35000 Rennes',
-  price_per_day: 80,
-  user: bertrand
-})
-mac_de_bertrand.photo.attach(io: file7, filename: 'mac5.jpeg', content_type: 'images/jpeg')
-mac_de_bertrand.save!
-
-acer_de_bertrand = Laptop.new({
-  name: 'Acer Aspire - 15,6 pouces',
-  description: 'Recommended to work. Processeur Intel® Core™ i3-1005G1 (1,2 GHz / 3,4 GHz)',
-  address: '30 rue de La Plaine 35000 Rennes',
-  price_per_day: 50,
-  user: bertrand
-})
-acer_de_bertrand.photo.attach(io: file8, filename: 'acer1.jpeg', content_type: 'images/jpeg   ')
-acer_de_bertrand.save!
-
-huawei_de_bertrand = Laptop.new({
-  name: 'Huawei Matebook X Pro - 23,8 pouces',
-  description: 'Intel® Core™ i5-1135G7 - Écran FullView 3K / Tactile',
-  address: '30 rue de La Plaine 35000 Rennes',
-  price_per_day: 110,
-  user: bertrand
-})
-huawei_de_bertrand.photo.attach(io: file12, filename: 'acer3.jpeg', content_type: 'images/jpeg')
-huawei_de_bertrand.save!
+fiat500_de_paul.photo.attach(io: file4, filename: 'fiat500.jpeg', content_type: 'images/jpeg')
+fiat500_de_paul.save!

@@ -1,0 +1,25 @@
+<div class="index-container">
+
+  <div class="cards">
+    <% @cars.each do |car| %>
+     <%= link_to car_path(car) do %>
+      <div class="">
+        <div class="car-card">
+          <img src="<%= cl_image_path(car.photo.key) %>" alt="">
+         <div class="car-card-text">
+            <h3> <%= car.name %> </h3>
+            <p><%= car.description %></p>
+            <h2><strong><%= car.price_per_day %> €/day </strong></h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+  <div id="map"
+       style="width: 50%; height: calc(100vh - 165px);"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
+</div>

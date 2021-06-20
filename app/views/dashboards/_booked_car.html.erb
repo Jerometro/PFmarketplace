@@ -1,0 +1,46 @@
+<div id="booking-card-<%= b.id %>" class="booking-card" data-controller="accept-deny">
+  <div>
+    <div class="book-config">
+  <h2><%= b.car.name %></h2>
+  <div class="calendar">
+    <i class="far fa-calendar-alt"></i>
+    <p>From <%= b.start_date.strftime("%d/%m/%y") %> to <%= b.end_date.strftime("%d/%m/%y") %></p>
+  </div>
+  <div class="price">
+    <h2> <%= b.price %></h2>
+    <i class="fas fa-euro-sign"></i>
+  </div>
+  <% if b.status == "pending"%>
+    <div class="accept-deny">
+      <div class="btn btn-outline-success" data-accept-deny-target="accept" data-action="click->accept-deny#update" data-url="<%= accept_booking_path(b) %>">
+        Accept
+      </div>
+      <div class="btn btn-outline-danger" data-accept-deny-target="deny" data-action="click->accept-deny#update" data-url="<%= deny_booking_path(b) %>">
+        Deny
+      </div>
+    </div>
+    <% else %>
+      <% if b.status == "accepted" %>
+      <div id="accepted">
+        <i class="fas fa-check"></i>
+        <p>Accepted</p>
+      </div>
+      <% end %>
+      <% if b.status == "denied" %>
+      <div id="denied">
+        <i class="fas fa-times"></i>
+        <p>Denied</p>
+      </div>
+      <% end %>
+      <% if b.status == "cancelled" %>
+      <div class="cancelled-status">
+        <i class="fas fa-times"></i>
+        <p>Cancelled</p>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  </div>
+  <img src="<%= cl_image_path(b.car.photo.key) %>" alt="">
+</div>
+
