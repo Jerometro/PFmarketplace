@@ -6,7 +6,7 @@ ruby '2.6.6'
 gem 'geocoder'
 
 gem 'cloudinary', '~> 1.16.0'
-gem 'dotenv-rails', groups: [:development, :test]
+# gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -36,7 +36,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
-gem 'simple_form'
 
 group :development, :test do
   gem 'pry-byebug'

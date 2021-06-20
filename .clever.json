@@ -1,11 +1,11 @@
 {
   "apps": [
     {
-      "app_id": "app_eb8a6698-de72-4771-a2ef-9f8171627f4a",
-      "org_id": "user_d7573f5f-10f2-4b0a-a615-d3701415a399",
-      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_eb8a6698-de72-4771-a2ef-9f8171627f4a.git",
-      "name": "Rent-a-Laptop",
-      "alias": "Rent-a-Laptop"
+      "app_id": "app_053d67cf-3332-465a-bb37-67f689de78f1",
+      "org_id": "user_d106b5e3-156f-4d00-aae7-7568fc029f36",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_053d67cf-3332-465a-bb37-67f689de78f1.git",
+      "name": "pfmarketplace",
+      "alias": "pfmarketplace"
     }
   ]
 }
