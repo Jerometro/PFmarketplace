@@ -1,15 +1,26 @@
 
 <div>
   <%= form_tag cars_path, method: :get, class: "simple_form search" do %>
-    <div class="search-form-control form-group">
-      <%= text_field_tag :query,
+<!--     <%= select_tag :city, options_for_select(["Rennes", "Lannion"], params[:city]), id: "different_option_value_html", include_blank: "Which city ?" %>
+ -->
+     <div class="search-form-control form-group">
+
+      <%= text_field_tag, class: "location" :query,
         params[:query],
         class: "form-control string required",
-        placeholder: "Find a car"
+
+        placeholder: "Where do you want a e-car"
       %>
+
+
+
+
+
+
       <button name="button" type="submit" class="btn btn-primary">
        <i class="fas fa-search"></i> Rent now
       </button>
+
     </div>
-    <% end %>
+  <% end %>
 </div>
