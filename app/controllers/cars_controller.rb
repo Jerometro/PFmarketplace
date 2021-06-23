@@ -1,15 +1,20 @@
 class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_car, only: [:destroy, :show, :edit, :update]
+  has_scope :by_location, using: [:address, :distance], type: :hash
 
   def index
-      if params[:query].present?
-        sql_query = "address ILIKE :query"
-        # sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
-        @cars = Car.where(sql_query, query: "%#{params[:query]}%")
-      else
-        @cars = Car.all.order(created_at: :desc)
-      end
+      # if params[:query].present?
+
+        @cars = apply_scopes(Car).all
+        # @cars_nb = @cars.count
+
+      #   sql_query = "address ILIKE :query"
+      #   # sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
+      #   @cars = Car.where(sql_query, query: "%#{params[:query]}%")
+      # else
+      #   @cars = Car.all.order(created_at: :desc)
+      # end
 
     # the `geocoded` scope filters only cars with coordinates (latitude & longitude)
     @markers = @cars.geocoded.map do |car|
@@ -20,6 +25,7 @@ class CarsController < ApplicationController
         image_url: helpers.asset_url('map-marker.png')
       }
     end
+
   end
 
   def show

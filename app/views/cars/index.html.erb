@@ -16,6 +16,9 @@
     <% end %>
     <% end %>
   </div>
+  <div>
+    <h3> <%= @cars_nb %> </h3>
+  </div>
   <div id="map"
        style="width: 50%; height: calc(100vh - 165px);"
        data-markers="<%= @markers.to_json %>"

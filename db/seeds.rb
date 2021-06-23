@@ -69,7 +69,8 @@ puts "Create Serge's car"
 twingo_de_serge = Car.new({
   name: 'eTwingo',
   description: 'Very good car',
-  address: '1 Rue Victor le Gorgeu, 35000 Rennes',
+  address: '1 Rue Victor le Gorgeu, 35000 Rennes, Bretagne, France',
+  area: 'Rennes, Bretagne, France',
   price_per_day: 40,
   user: serge
 })
@@ -82,7 +83,8 @@ puts "Create Marine's car"
 clio_de_marine = Car.new({
   name: 'eClio',
   description: 'Very good car',
-  address: '27 Rue Alphonse Milon, 35760 Saint-Grégoire',
+  address: '27 Rue Alphonse Milon, 35760 Saint-Grégoire, Bretagne, France',
+  area: 'Rennes, Bretagne, France',
   price_per_day: 50,
   user: marine
 })
@@ -94,7 +96,8 @@ puts "Create Bertrand's car"
 micra_de_bertrand = Car.new({
   name: 'eMicra',
   description: 'Very good car',
-  address: '11 Square de Sendai, 35700 Rennes',
+  address: '1 Rue du Prieuré, 35220 Châteaubourg, Bretagne, France',
+  area: 'Rennes, Bretagne, France',
   price_per_day: 45,
   user: bertrand
 })
@@ -105,7 +108,8 @@ puts "Create Paul's car"
 fiat500_de_paul = Car.new({
   name: 'eFiat500',
   description: 'Very good car',
-  address: '4 Rue des Violettes, 35132 Vezin-le-Coquet',
+  address: '4 Rue des Violettes, 35132 Vezin-le-Coquet, Bretagne, France',
+  area: 'Rennes, Bretagne, France',
   price_per_day: 50,
   user: paul
 })
@@ -117,7 +121,8 @@ puts "Create Lucie's car"
 twingo_de_lucie = Car.new({
   name: 'eTwingo',
   description: 'Very good car',
-  address: '4-16 Rue du Dauphiné, 22300 Lannion',
+  address: '16 Rue du Dauphiné, 22300 Lannion, Bretagne, France',
+  area: 'Lannion, Bretagne, France',
   price_per_day: 40,
   user: lucie
 })
@@ -128,7 +133,8 @@ puts "Create Michel's car"
 twingo_de_michel = Car.new({
   name: 'eTwingo',
   description: 'Very good car',
-  address: '48-41 Résidence de Keranroux, 22300 Ploubezre',
+  address: '1 Rue François le Bricquir, 22700 Saint-Quay-Perros, Bretagne, France',
+  area: 'Lannion, Bretagne, France',
   price_per_day: 40,
   user: michel
 })

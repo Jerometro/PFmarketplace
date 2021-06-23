@@ -31,11 +31,15 @@ import 'mapbox-gl/dist/mapbox-gl';
 import { initMapbox } from '../plugins/init_mapbox';
 import { showTotalPrice } from '../components/price';
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initAutocomplete } from '../plugins/init_autocomplete';
+import { pickcity } from '../plugins/pickcity';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   showTotalPrice();
   initFlatpickr();
+  initAutocomplete();
+  pickcity();
 })
 
 // Internal imports, e.g:
